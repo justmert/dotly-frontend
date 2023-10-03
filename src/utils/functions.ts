@@ -60,6 +60,7 @@ export const formatDistanceToNow = (dateString: string) => {
   }
 };
 
-export function publicKeyToAddress(publicKey: string, prefix = 0) {
+export function publicKeyToAddress(publicKey: string | undefined, prefix = 0) {
+  if (!publicKey) return '';
   return encodeAddress(publicKey, prefix);
 }
