@@ -5,7 +5,7 @@ This is the frontend of the Dotly project. It is written in Next Js and uses Tai
 If you want to run the frontend locally with docker, you need to follow this steps:
 
 1. **Clone the project**
-2. **Geneare a docker build** 
+2. **Generate a docker build** 
     ```
     docker build -t dotly-frontend .
    ```
