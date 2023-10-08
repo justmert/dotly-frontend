@@ -5,6 +5,7 @@ import Account from "@/components/overview/Account";
 import BalanceDistribution from "@/components/overview/BalanceDistribution";
 import BalanceHistory from "@/components/overview/BalanceHistory";
 import BalanceStats from "@/components/overview/BalanceStats";
+import BalancePieChart from "@/components/overview/BalancePieChart";
 import Identity from "@/components/overview/Identity";
 
 export default function Overview() {
@@ -27,6 +28,9 @@ export default function Overview() {
         </div>
         <div id="balance-history" className="w-full">
           <BalanceHistory />
+        </div>
+        <div id="balance-pie-chart" className="w-full">
+          <BalancePieChart />
         </div>
         <div className="flex flex-col md:flex-row space-y-10 md:space-x-6 md:space-y-0 w-full">
           <div id="balance-distribution" className="w-full md:w-2/3">
