@@ -14,14 +14,10 @@ import { formatLargeNumber } from "@/utils/functions";
 import { FaArrowDown, FaArrowUp, FaCalendar } from "react-icons/fa";
 
 export default function BalanceStats() {
-  const { balanceStats, isLoading } = useBalanceStats();
   const router = useRouter();
 
   const { balanceStats, isLoading } = useBalanceStats();
-  const { weeklyTransactionRate, isLoading: isLoading2 } =
-    useWeeklyTransactionRate();
-
-  const router = useRouter();
+  const { weeklyTransactionRate, isLoading: isLoading2 } = useWeeklyTransactionRate();
 
   if (isLoading && isLoading2)
     return (
