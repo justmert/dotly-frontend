@@ -70,12 +70,12 @@ interface Judgement {
 }
 
 export interface IIdentity {
-  network: string;
-  identity: boolean;
-  display: string;
-  web: string;
-  riot: string;
-  email: string;
-  twitter: string;
-  judgements: Judgement[];
-}
+    network: string;
+    identity: boolean;
+    parent: {
+      address: string;
+      display: string;
+      sub_symbol: string;
+      identity: boolean;
+    }
+  }
