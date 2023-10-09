@@ -26,7 +26,6 @@ export default function Extrinsics() {
             <SuccessRate />
           </div>
         </div>
-
         <div id="distribution" className="w-full">
           <Distribution />
         </div>

@@ -5,6 +5,7 @@ import RecentTransfers from "@/components/stats/RecentTransfers";
 import TotalTransfers from "@/components/stats/TotalTransfers";
 import TransferHistory from "@/components/stats/TransferHistory";
 import TransferRelationship from "@/components/stats/TransferRelationship";
+import BalanceHistory from "@/components/overview/BalanceHistory";
 
 export default function Stats() {
   return (
@@ -26,6 +27,9 @@ export default function Stats() {
           <div id="total-transfers" className="w-full md:w-1/3">
             <TotalTransfers />
           </div>
+        </div>
+        <div id="balance-history" className="w-full">
+          <BalanceHistory />
         </div>
         <div id="transfer-relationship" className="w-full">
           <TransferRelationship />

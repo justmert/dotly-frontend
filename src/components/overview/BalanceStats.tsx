@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 
 // Hooks
 import useBalanceStats from "@/models/overview/useBalanceStats";
+import useWeeklyTransactionRate from "@/models/extrinsics/useWeeklyTransactionRate";
 
 // Modules and Utils
 import Layout from "@/modules/Card/Layout/Layout";
@@ -10,13 +11,19 @@ import CardLoader from "@/modules/Card/Loader/Loader";
 import NoData from "@/modules/Card/NoData/NoData";
 import { formatLargeNumber } from "@/utils/functions";
 
-import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { FaArrowDown, FaArrowUp, FaCalendar } from "react-icons/fa";
 
 export default function BalanceStats() {
   const { balanceStats, isLoading } = useBalanceStats();
   const router = useRouter();
 
-  if (isLoading)
+  const { balanceStats, isLoading } = useBalanceStats();
+  const { weeklyTransactionRate, isLoading: isLoading2 } =
+    useWeeklyTransactionRate();
+
+  const router = useRouter();
+
+  if (isLoading && isLoading2)
     return (
       <CardLoader
         element={
@@ -64,7 +71,7 @@ export default function BalanceStats() {
         tooltip=""
         route={router.asPath + "#balance-stats"}
       />{" "}
-      <div className="grid gird-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
         <BalanceStatsItem
           title="Max Balance"
           value={formatLargeNumber(balanceStats.max)}
@@ -81,6 +88,15 @@ export default function BalanceStats() {
           title="Previous 24H Balance"
           value={formatLargeNumber(balanceStats.prev24H)}
           icon={<FaArrowUp className="text-green-500 text-2xl" />}
+        />
+      </div>
+      <div className="grid grid-cols-1">
+        <BalanceStatsItem
+          title="Weekly Transaction Rate"
+          value={formatLargeNumber(
+            weeklyTransactionRate?.last_week_transaction_count as number
+          )}
+          icon={<FaCalendar className="text-green-500 text-2xl" />}
         />
       </div>
     </Layout>

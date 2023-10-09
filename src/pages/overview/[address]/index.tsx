@@ -3,7 +3,6 @@ import Head from "next/head";
 // Page Components
 import Account from "@/components/overview/Account";
 import BalanceDistribution from "@/components/overview/BalanceDistribution";
-import BalanceHistory from "@/components/overview/BalanceHistory";
 import BalanceStats from "@/components/overview/BalanceStats";
 import BalancePieChart from "@/components/overview/BalancePieChart";
 import Identity from "@/components/overview/Identity";
@@ -25,9 +24,6 @@ export default function Overview() {
           <div id="identity" className="w-full md:w-1/3">
             <Identity />
           </div>
-        </div>
-        <div id="balance-history" className="w-full">
-          <BalanceHistory />
         </div>
         <div id="balance-pie-chart" className="w-full">
           <BalancePieChart />
