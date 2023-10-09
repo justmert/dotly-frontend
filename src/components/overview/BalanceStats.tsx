@@ -90,7 +90,8 @@ export default function BalanceStats() {
         <BalanceStatsItem
           title="Weekly Transaction Rate"
           value={formatLargeNumber(
-            weeklyTransactionRate?.last_week_transaction_count as number
+            (weeklyTransactionRate?.last_week_transaction_count as number) ||
+              "NaN"
           )}
           icon={<FaCalendar className="text-green-500 text-2xl" />}
         />
