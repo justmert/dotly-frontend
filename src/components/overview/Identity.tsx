@@ -64,28 +64,30 @@ export default function Identity() {
         <div className="md:col-span-4 col-span-4">
           <Badge
             name="Network"
-            status={data.network}
+            status={data.network ? data.network : "-"}
             iconStart={<MdCheckCircle className="text-green-900 text-lg" />}
           />
         </div>
         <div className="md:col-span-4 col-span-4">
           <Badge
             name="Identity"
-            status={String(data.parent.identity)}
+            status={String(
+              data?.parent?.identity ? data.parent.identity : data.identity
+            )}
             iconStart={<MdCheckCircle className="text-green-900 text-lg" />}
           />
         </div>
         <div className="md:col-span-4 col-span-4">
           <Badge
             name="Display"
-            status={data?.parent?.display}
+            status={data?.parent?.display ? data.parent.display : data.display}
             iconStart={<MdCheckCircle className="text-green-900 text-lg" />}
           />
         </div>
         <div className="md:col-span-4 col-span-4">
           <Badge
             name="Sub Symbol"
-            status={data?.parent?.sub_symbol}
+            status={data?.parent?.sub_symbol ? data.parent.sub_symbol : "-"}
             iconStart={<MdCheckCircle className="text-green-900 text-lg" />}
           />
         </div>
